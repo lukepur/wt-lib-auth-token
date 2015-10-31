@@ -1,0 +1,25 @@
+{
+  "name": "wt-lib-auth-token",
+  "version": "0.0.1",
+  "description": "Token utilities for wt-service-auth API. Includes getting ID/payload from token, verifying token, refreshing token and caching of verification key.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukepur/wt-lib-auth-token.git"
+  },
+  "author": "lukepur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukepur/wt-lib-auth-token/issues"
+  },
+  "homepage": "https://github.com/lukepur/wt-lib-auth-token#readme",
+  "dependencies": {
+    "jsonwebtoken": "^5.4.1",
+    "q": "^1.4.1",
+    "request-promise": "^1.0.2",
+    "winston": "^2.0.0"
+  }
+}
