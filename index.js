@@ -81,7 +81,7 @@ AuthTokenUtils.prototype.refreshPublicKey = function refreshPublicKey() {
   }.bind(this));
 };
 
-AuthTokenUtils.prototype.getBearerToken = function getBearerToken(req) {
+AuthTokenUtils.prototype.getTokeFromBearer = function getBearerToken(req) {
   var token = req.header('Authorization');
   return getTokenFromBearer(token);
 };
