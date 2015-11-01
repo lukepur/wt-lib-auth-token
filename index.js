@@ -6,7 +6,7 @@ var logger = require('winston');
 var instance;
 
 var getTokenFromBearer = function getTokenFromBearer(bearerToken) {
-  return (typeof token === 'string' ? token.replace('Bearer ', '').replace(' ', '') : bearerToken);
+  return (typeof bearerToken === 'string' ? bearerToken.replace('Bearer ', '').replace(' ', '') : bearerToken);
 };
 
 var AuthTokenUtils = function authToken (opts) {
