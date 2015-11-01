@@ -50,6 +50,7 @@ AuthTokenUtils.prototype.verify = function verify(token) {
   }.bind(this);
 
   if (!token) {
+    deferred.reject('token verification failed');
     return undefined;
   }
 
