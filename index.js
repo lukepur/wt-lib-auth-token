@@ -5,6 +5,10 @@ var logger = require('winston');
 
 var instance;
 
+var getTokenFromBearer = function getTokenFromBearer(bearerToken) {
+  return (typeof token === 'string' ? token.replace('Bearer ', '').replace(' ', '') : bearerToken);
+};
+
 var AuthTokenUtils = function authToken (opts) {
   var pubKeyUrl;
 
@@ -33,6 +37,8 @@ var AuthTokenUtils = function authToken (opts) {
 AuthTokenUtils.prototype.verify = function verify(token) {
   var payload;
   var deferred = Q.defer();
+
+  token = getBearerToken(token);
 
   var attemptVerification = function (nextStep) {
     try {
@@ -77,7 +83,7 @@ AuthTokenUtils.prototype.refreshPublicKey = function refreshPublicKey() {
 
 AuthTokenUtils.prototype.getBearerToken = function getBearerToken(req) {
   var token = req.header('Authorization');
-  return (typeof token === 'string' ? token.replace('Bearer ', '').replace(' ', '') : undefined);
+  return getTokenFromBearer(token);
 };
 
 module.exports = AuthTokenUtils;
