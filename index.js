@@ -51,7 +51,7 @@ AuthTokenUtils.prototype.verify = function verify(token) {
 
   if (!token) {
     deferred.reject('token verification failed');
-    return undefined;
+    return deferred.promise;
   }
 
   attemptVerification('Token verification failed. Re-fetching public key.');
