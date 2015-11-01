@@ -38,7 +38,7 @@ AuthTokenUtils.prototype.verify = function verify(token) {
   var payload;
   var deferred = Q.defer();
 
-  token = getBearerToken(token);
+  token = getTokenFromBearer(token);
 
   var attemptVerification = function (nextStep) {
     try {
@@ -81,7 +81,7 @@ AuthTokenUtils.prototype.refreshPublicKey = function refreshPublicKey() {
   }.bind(this));
 };
 
-AuthTokenUtils.prototype.getTokeFromBearer = function getBearerToken(req) {
+AuthTokenUtils.prototype.getBearerToken = function getBearerToken(req) {
   var token = req.header('Authorization');
   return getTokenFromBearer(token);
 };
